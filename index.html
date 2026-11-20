@@ -50,7 +50,7 @@ footer a{color:var(--accent)}
 <img class="logo" src="nunu-logo.svg" alt="nunu — hokonunu logo">
 <h1>hokonunu<span>.</span></h1>
 <p class="lede"><strong>Global Free Resources &amp; Digital Media Platform</strong><br>Discover Everything Free. Organize Everything Valuable. Share It with the World.</p>
-<div class="badges"><span class="badge">22 verified free resources</span><span class="badge">Last verified: Nov 2026</span><span class="badge">English · Global</span><span class="badge">No paid listing shown as free</span></div>
+<div class="badges"><span class="badge">23 verified free resources</span><span class="badge">Last verified: Nov 2026</span><span class="badge">English · Global</span><span class="badge">No paid listing shown as free</span></div>
 </div></header>
 <main><div class="wrap">
 <div class="toolbar"><input type="search" id="q" placeholder="Search a tool — e.g. Leonardo, Deepgram, Groq…" aria-label="Search resources"></div>
@@ -111,12 +111,13 @@ const R=[
 {n:"Canva",u:"https://www.canva.com",c:"Design / graphics",f:"research",t:"Free plan",a:"1.6M+ templates; 5 GB; up to 20 AI uses/month",l:"Premium content watermarked on Free; no background removal, CMYK export or social scheduling.",s:"Signup: Yes",k:"Card: No",g:"Google login: Not confirmed",e:"Expiry: Not stated",v:"Free design, presentations and docs."},
 {n:"Figma",u:"https://www.figma.com",c:"Design / UI prototyping",f:"research",t:"Free plan (Starter)",a:"Unlimited drafts; 150 AI credits/day up to 500/month",l:"3 Design/Sites + 3 FigJam + 3 Slides files in one team folder; 30-day history.",s:"Signup: Yes",k:"Card: No",g:"Google login: Not confirmed",e:"Expiry: Not stated",v:"Free UI design and prototyping."},
 {n:"Notion",u:"https://www.notion.com",c:"Productivity / notes, docs, databases",f:"research",t:"Free plan",a:"Unlimited pages/blocks for a solo user; 5 MB/file; 7-day history",l:"2+-member workspace capped at 1,000 blocks.",s:"Signup: Yes",k:"Card: No",g:"Google login: Not confirmed",e:"Expiry: Not stated",v:"Free workspace, notes and databases."},
+{n:"Altare",u:"https://altare.gg",c:"Cloud servers / VPS",f:"research",t:"Free plan",a:"6 GB memory, 150% CPU, 10 GB disk — up to 4 servers",l:"Team pool split however you like; 10 GB U3 storage; 1 GB KV, 3M reads/month.",s:"Signup: Yes",k:"Card: No card stated for Always Free",g:"Google login: Not confirmed",e:"Expiry: Not stated",v:"Free cloud servers with SSH root access — Node, Python, Go, Rust, Docker. Bolts earned from activity can permanently add resources."},
 {n:"ChatGPT",u:"https://chatgpt.com",c:"AI chat / assistant",f:"ai",t:"Free plan",a:"Unlimited everyday text chats; 3 file uploads/day",l:"No published numbers for images, voice or Deep Research on Free; API is paid only.",s:"Signup: Yes",k:"Card: No",g:"Google login: Not confirmed",e:"Expiry: Not stated",v:"Free AI chat."}
 ];
 let f="all",q="";
 function render(){
  const list=R.filter(r=>(f==="all"||r.f===f)&&(!q||(r.n+" "+r.c+" "+r.a+" "+r.v).toLowerCase().includes(q)));
- document.getElementById("count").textContent=list.length+" of 22 resources — last verified Nov 2026";
+ document.getElementById("count").textContent=list.length+" of 23 resources — last verified Nov 2026";
  document.getElementById("grid").innerHTML=list.map(r=>`<article class="card"><div class="cat">${r.c}</div><h2><a href="${r.u}" target="_blank" rel="noopener">${r.n}</a></h2><p class="free">${r.t} · ${r.a}</p><p class="meta">${r.l}</p><p class="meta"><b>Best for:</b> ${r.v}</p><p class="meta">${r.s} · ${r.k}<br>${r.g}<br>${r.e}</p><div class="visit"><a href="${r.u}" target="_blank" rel="noopener">Visit official site →</a></div><div class="verified">Last verified Nov 2026 · Re-check official pricing before signup</div></article>`).join("")||"<p>No matches. Try another search.</p>";
 }
 document.getElementById("q").addEventListener("input",e=>{q=e.target.value.toLowerCase();render();});
